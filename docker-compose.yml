@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:16
+    container_name: odoo_fresh_db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: Admin@123
+      POSTGRES_DB: fresh_odoo
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  odoo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: odoo_fresh
+    depends_on:
+      - db
+    ports:
+      - "8085:8069"
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: Admin@123
+      DB_NAME: fresh_odoo
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./server/addons:/mnt/extra-addons
+    restart: unless-stopped
+
+volumes:
+  db-data:
+  odoo-data:
