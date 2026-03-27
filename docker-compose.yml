@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:16
+    image: pgvector/pgvector:pg16
     container_name: odoo_fresh_db
     environment:
       POSTGRES_USER: odoo
@@ -27,6 +27,7 @@ services:
     volumes:
       - odoo-data:/var/lib/odoo
       - ./server/addons:/mnt/extra-addons
+      - ./server/addons:/mnt/server/addons
     restart: unless-stopped
 
 volumes:
