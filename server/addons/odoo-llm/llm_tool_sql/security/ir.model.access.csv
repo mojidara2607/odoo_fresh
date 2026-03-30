@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_llm_sql_query_tool_manager,llm.sql.query.tool.manager,model_llm_sql_query_tool,llm.group_llm_manager,1,1,1,1
+access_llm_sql_query_tool_user,llm.sql.query.tool.user,model_llm_sql_query_tool,base.group_user,1,0,0,0

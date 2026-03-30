@@ -1,0 +1,98 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12" style="text-align: center;">
+            <h2 style="color: #875A7B; font-weight: bold;">LLM Tool: SQL Query</h2>
+            <h3 style="color: #555555;">
+                Let your AI assistant query the Odoo database safely
+            </h3>
+            <p>
+                <span style="background-color: #875A7B; color: #ffffff; padding: 4px 12px; border-radius: 12px; font-size: 13px; margin-right: 6px;">Read-Only</span>
+                <span style="background-color: #28a745; color: #ffffff; padding: 4px 12px; border-radius: 12px; font-size: 13px; margin-right: 6px;">Secure</span>
+                <span style="background-color: #17a2b8; color: #ffffff; padding: 4px 12px; border-radius: 12px; font-size: 13px;">Production Ready</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="background-color: #f8f9fa; padding: 30px 0;">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color: #333333; font-weight: bold; text-align: center;">How It Works</h3>
+        </div>
+        <div class="oe_span4" style="text-align: center; padding: 15px;">
+            <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; min-height: 180px;">
+                <h4 style="color: #875A7B;">1. User Asks</h4>
+                <p style="color: #666666;">"How many products do we have available?"</p>
+            </div>
+        </div>
+        <div class="oe_span4" style="text-align: center; padding: 15px;">
+            <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; min-height: 180px;">
+                <h4 style="color: #875A7B;">2. AI Queries</h4>
+                <p style="color: #666666;">The AI calls <code>execute_sql_query</code> with a safe SELECT statement</p>
+            </div>
+        </div>
+        <div class="oe_span4" style="text-align: center; padding: 15px;">
+            <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; min-height: 180px;">
+                <h4 style="color: #875A7B;">3. AI Answers</h4>
+                <p style="color: #666666;">"You have 42 products available in your system."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color: #333333; font-weight: bold; text-align: center;">Security Features</h3>
+        </div>
+        <div class="oe_span6" style="padding: 10px;">
+            <ul style="color: #555555; line-height: 2;">
+                <li><strong>SELECT only</strong> - INSERT, UPDATE, DELETE are blocked</li>
+                <li><strong>Keyword blocking</strong> - DROP, ALTER, TRUNCATE, GRANT and more</li>
+                <li><strong>Row limiting</strong> - Max 100 rows per query</li>
+            </ul>
+        </div>
+        <div class="oe_span6" style="padding: 10px;">
+            <ul style="color: #555555; line-height: 2;">
+                <li><strong>SAVEPOINT isolation</strong> - Errors roll back safely</li>
+                <li><strong>CTE support</strong> - WITH queries allowed</li>
+                <li><strong>Type-safe results</strong> - Decimal, datetime auto-converted</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="background-color: #f8f9fa; padding: 30px 0;">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color: #333333; font-weight: bold; text-align: center;">LLM-Friendly Response Format</h3>
+        </div>
+        <div class="oe_span6" style="padding: 10px;">
+            <h4 style="color: #875A7B;">Count Query</h4>
+            <pre style="background-color: #ffffff; padding: 15px; border-radius: 5px; border: 1px solid #dddddd;">SELECT COUNT(*) as count FROM product_template
+
+Result: {"count": 42}</pre>
+        </div>
+        <div class="oe_span6" style="padding: 10px;">
+            <h4 style="color: #875A7B;">Multi-Row Query</h4>
+            <pre style="background-color: #ffffff; padding: 15px; border-radius: 5px; border: 1px solid #dddddd;">SELECT name, list_price FROM product_template LIMIT 3
+
+Result: {"rows": [
+  {"name": "Desk", "list_price": 150.0},
+  {"name": "Chair", "list_price": 75.0}
+], "row_count": 2}</pre>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12" style="text-align: center;">
+            <h3 style="color: #333333; font-weight: bold;">Requirements</h3>
+            <p style="color: #555555;">
+                Requires the <strong>LLM Tool</strong> base module (llm_tool).
+                Compatible with any LLM provider (OpenAI, Ollama, Anthropic, Mistral).
+            </p>
+        </div>
+    </div>
+</section>
